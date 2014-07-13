@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{10368E6C-D01B-4462-8E8B-01FC667A7035};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{D2B190A9-EFED-4AF2-8266-65F6EEB76D4A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PdCore</RootNamespace>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <AssemblyName>PdCore</AssemblyName>
+    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Additions\LibPDNativeMessaging.cs" />
+    <Compile Include="Additions\LibPDNativeMethods.cs" />
+    <Compile Include="Additions\LibPDNativeMidi.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Additions\AboutAdditions.txt" />
+    <None Include="Jars\AboutJars.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <TransformFile Include="Transforms\EnumFields.xml" />
+    <TransformFile Include="Transforms\EnumMethods.xml" />
+    <TransformFile Include="Transforms\Metadata.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Xamarin.Android.Bindings.targets" />
+  <ItemGroup>
+    <Folder Include="Jars\armeabi\" />
+    <Folder Include="Jars\armeabi-v7a\" />
+    <Folder Include="Jars\x86\" />
+    <Folder Include="Jars\mips\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi\libbonk_tilde.so">
+      <Link>Jars\armeabi\libbonk_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi\libchoice.so">
+      <Link>Jars\armeabi\libchoice.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi\libexpr.so">
+      <Link>Jars\armeabi\libexpr.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi\libfiddle_tilde.so">
+      <Link>Jars\armeabi\libfiddle_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi\libloop_tilde.so">
+      <Link>Jars\armeabi\libloop_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi\liblrshift_tilde.so">
+      <Link>Jars\armeabi\liblrshift_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi\libpd.so">
+      <Link>Jars\armeabi\libpd.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi\libpdnative.so">
+      <Link>Jars\armeabi\libpdnative.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi\libpdnativeopensl.so">
+      <Link>Jars\armeabi\libpdnativeopensl.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi\libpique.so">
+      <Link>Jars\armeabi\libpique.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi\libsigmund_tilde.so">
+      <Link>Jars\armeabi\libsigmund_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi-v7a\libbonk_tilde.so">
+      <Link>Jars\armeabi-v7a\libbonk_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi-v7a\libchoice.so">
+      <Link>Jars\armeabi-v7a\libchoice.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi-v7a\libexpr.so">
+      <Link>Jars\armeabi-v7a\libexpr.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi-v7a\libfiddle_tilde.so">
+      <Link>Jars\armeabi-v7a\libfiddle_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi-v7a\libloop_tilde.so">
+      <Link>Jars\armeabi-v7a\libloop_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi-v7a\liblrshift_tilde.so">
+      <Link>Jars\armeabi-v7a\liblrshift_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi-v7a\libpd.so">
+      <Link>Jars\armeabi-v7a\libpd.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi-v7a\libpdnative.so">
+      <Link>Jars\armeabi-v7a\libpdnative.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi-v7a\libpdnativeopensl.so">
+      <Link>Jars\armeabi-v7a\libpdnativeopensl.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi-v7a\libpique.so">
+      <Link>Jars\armeabi-v7a\libpique.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\armeabi-v7a\libsigmund_tilde.so">
+      <Link>Jars\armeabi-v7a\libsigmund_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\x86\libbonk_tilde.so">
+      <Link>Jars\x86\libbonk_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\x86\libchoice.so">
+      <Link>Jars\x86\libchoice.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\x86\libexpr.so">
+      <Link>Jars\x86\libexpr.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\x86\libfiddle_tilde.so">
+      <Link>Jars\x86\libfiddle_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\x86\libloop_tilde.so">
+      <Link>Jars\x86\libloop_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\x86\liblrshift_tilde.so">
+      <Link>Jars\x86\liblrshift_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\x86\libpd.so">
+      <Link>Jars\x86\libpd.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\x86\libpdnative.so">
+      <Link>Jars\x86\libpdnative.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\x86\libpdnativeopensl.so">
+      <Link>Jars\x86\libpdnativeopensl.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\x86\libpique.so">
+      <Link>Jars\x86\libpique.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\x86\libsigmund_tilde.so">
+      <Link>Jars\x86\libsigmund_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\mips\libbonk_tilde.so">
+      <Link>Jars\mips\libbonk_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\mips\libchoice.so">
+      <Link>Jars\mips\libchoice.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\mips\libexpr.so">
+      <Link>Jars\mips\libexpr.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\mips\libfiddle_tilde.so">
+      <Link>Jars\mips\libfiddle_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\mips\libloop_tilde.so">
+      <Link>Jars\mips\libloop_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\mips\liblrshift_tilde.so">
+      <Link>Jars\mips\liblrshift_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\mips\libpd.so">
+      <Link>Jars\mips\libpd.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\mips\libpdnative.so">
+      <Link>Jars\mips\libpdnative.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\mips\libpdnativeopensl.so">
+      <Link>Jars\mips\libpdnativeopensl.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\mips\libpique.so">
+      <Link>Jars\mips\libpique.so</Link>
+    </EmbeddedNativeLibrary>
+    <EmbeddedNativeLibrary Include="..\libs\mips\libsigmund_tilde.so">
+      <Link>Jars\mips\libsigmund_tilde.so</Link>
+    </EmbeddedNativeLibrary>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedJar Include="Jars\dummyjar.jar" />
+  </ItemGroup>
+</Project>

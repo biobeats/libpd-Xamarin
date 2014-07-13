@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdCoreTestApplication", "PdCoreTestApplication\PdCoreTestApplication.csproj", "{FABDA338-91F4-44E5-B4C8-92461BFC2F62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdCore", "PdCore\PdCore.csproj", "{D2B190A9-EFED-4AF2-8266-65F6EEB76D4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdCore.Android", "PdCoreAndroid\PdCore.Android.csproj", "{9A25E9DA-D140-404A-8E54-C2A7679C5A18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A25E9DA-D140-404A-8E54-C2A7679C5A18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A25E9DA-D140-404A-8E54-C2A7679C5A18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A25E9DA-D140-404A-8E54-C2A7679C5A18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A25E9DA-D140-404A-8E54-C2A7679C5A18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C31D7544-7FA6-4ADD-A311-C50FAC061102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C31D7544-7FA6-4ADD-A311-C50FAC061102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C31D7544-7FA6-4ADD-A311-C50FAC061102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C31D7544-7FA6-4ADD-A311-C50FAC061102}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2B190A9-EFED-4AF2-8266-65F6EEB76D4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2B190A9-EFED-4AF2-8266-65F6EEB76D4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2B190A9-EFED-4AF2-8266-65F6EEB76D4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2B190A9-EFED-4AF2-8266-65F6EEB76D4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FABDA338-91F4-44E5-B4C8-92461BFC2F62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FABDA338-91F4-44E5-B4C8-92461BFC2F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FABDA338-91F4-44E5-B4C8-92461BFC2F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FABDA338-91F4-44E5-B4C8-92461BFC2F62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC3FD398-9968-4860-9491-954A4408733F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC3FD398-9968-4860-9491-954A4408733F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC3FD398-9968-4860-9491-954A4408733F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC3FD398-9968-4860-9491-954A4408733F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B3F0C60-1808-4356-9D5D-CEDF23A5D6FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3F0C60-1808-4356-9D5D-CEDF23A5D6FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3F0C60-1808-4356-9D5D-CEDF23A5D6FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3F0C60-1808-4356-9D5D-CEDF23A5D6FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = PdCoreTestApplication\PdCoreTestApplication.csproj
+	EndGlobalSection
+EndGlobal

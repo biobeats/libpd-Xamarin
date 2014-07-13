@@ -1,0 +1,6 @@
+[submodule "libpd"]
+	path = libpd
+	url = https://github.com/libpd/libpd
+[submodule "jni/libpd"]
+	path = jni/libpd
+	url = /Users/michael/Projects/PdCore/jni/libpd

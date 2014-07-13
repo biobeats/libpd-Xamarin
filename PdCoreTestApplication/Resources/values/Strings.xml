@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="start">Start libpd</string>
+	<string name="stop">Stop libpd</string>
+	<string name="app_name">PdCoreTestApplication</string>
+</resources>

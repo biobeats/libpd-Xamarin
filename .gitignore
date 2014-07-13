@@ -1,0 +1,8 @@
+*.userprefs
+PdCore/obj
+PdCoreAndroid/obj
+PdCoreTestApplication/bin
+PdCoreTestApplication/obj
+PdCoreAndroid/bin
+PdCore/bin
+obj

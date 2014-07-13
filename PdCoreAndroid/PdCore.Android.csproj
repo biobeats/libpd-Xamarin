@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{9A25E9DA-D140-404A-8E54-C2A7679C5A18}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PdCore.Android</RootNamespace>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <AssemblyName>PdCoreAndroid</AssemblyName>
+    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="System.IO.Compression" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Source\IllegalArgumentException.cs" />
+    <Compile Include="Source\Service\PdService.cs" />
+    <Compile Include="Source\Utils\Properties.cs" />
+    <Compile Include="Source\IO\AudioParameters\AudioParametersImpl.cs" />
+    <Compile Include="Source\IO\AudioParameters\BasicOpenSLParameters.cs" />
+    <Compile Include="Source\IO\AudioParameters\JavaAudioParameter.cs" />
+    <Compile Include="Source\IO\AudioParameters\JellyBeanMR10OpenSLParameters.cs" />
+    <Compile Include="Source\IO\AudioParameters\JellyBeanOpenSLParameters.cs" />
+    <Compile Include="Source\IO\AudioParameters\VersionedAudioFormat.cs" />
+    <Compile Include="Source\IO\AudioRecorderWrapper.cs" />
+    <Compile Include="Source\IOException.cs" />
+    <Compile Include="Source\IO\AudioWrapper.cs" />
+    <Compile Include="Source\IO\PdAudio.cs" />
+    <Compile Include="Source\IO\AudioParameters\AudioParameters.cs" />
+    <Compile Include="Source\Utils\IOUtils.cs" />
+    <Compile Include="Source\Service\PdServiceBinder.cs" />
+    <Compile Include="Source\Service\PdServiceConnection.cs" />
+    <Compile Include="Source\PdWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\raw\silence.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Source\" />
+    <Folder Include="Source\IO\" />
+    <Folder Include="Source\Midi\" />
+    <Folder Include="Source\Service\" />
+    <Folder Include="Source\Utils\" />
+    <Folder Include="Source\IO\AudioParameters\" />
+    <Folder Include="Resources\raw\" />
+    <Folder Include="Assets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\extra_abs.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PdCore\PdCore.csproj">
+      <Project>{D2B190A9-EFED-4AF2-8266-65F6EEB76D4A}</Project>
+      <Name>PdCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
