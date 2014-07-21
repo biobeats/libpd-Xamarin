@@ -10,7 +10,7 @@ namespace PdCore.Android
 	public class PDWrapper {
 		private static String TAG = "PDWrapper";
 		private Context activity;
-		private int SAMPLE_RATE = 22050;
+		private int SAMPLE_RATE = 44100;
 		private int patch = 0;
 		private File patchDirectory;
 		public int bufferSize = 50;
@@ -29,8 +29,8 @@ namespace PdCore.Android
 		public PdService pdService = null;
 		private PdServiceConnection serviceConnection;
 
-		public void initPdService() {
-			var demoServiceIntent = new Intent ("com.biobeats.PdService");
+		public void Start(Context context) {
+			var demoServiceIntent = new Intent(context.ApplicationContext, typeof(PdService));
 			activity.BindService (demoServiceIntent, serviceConnection, Bind.AutoCreate);
 		}
 
@@ -68,7 +68,7 @@ namespace PdCore.Android
 			pdService.startAudio();
 		}
 
-		public void cleanup() {
+		public void Stop() {
 			/* make sure to release all resources */
 			stopAudio();
 			if (patch != 0) {

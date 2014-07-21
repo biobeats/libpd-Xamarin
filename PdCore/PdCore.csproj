@@ -24,6 +24,11 @@
     <AndroidLinkMode>None</AndroidLinkMode>
     <ConsolePause>false</ConsolePause>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="build.sh" workingdir="${ProjectDir}" externalConsole="True" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -60,7 +65,6 @@
     <Folder Include="Jars\armeabi\" />
     <Folder Include="Jars\armeabi-v7a\" />
     <Folder Include="Jars\x86\" />
-    <Folder Include="Jars\mips\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedNativeLibrary Include="..\libs\armeabi\libbonk_tilde.so">
@@ -161,39 +165,6 @@
     </EmbeddedNativeLibrary>
     <EmbeddedNativeLibrary Include="..\libs\x86\libsigmund_tilde.so">
       <Link>Jars\x86\libsigmund_tilde.so</Link>
-    </EmbeddedNativeLibrary>
-    <EmbeddedNativeLibrary Include="..\libs\mips\libbonk_tilde.so">
-      <Link>Jars\mips\libbonk_tilde.so</Link>
-    </EmbeddedNativeLibrary>
-    <EmbeddedNativeLibrary Include="..\libs\mips\libchoice.so">
-      <Link>Jars\mips\libchoice.so</Link>
-    </EmbeddedNativeLibrary>
-    <EmbeddedNativeLibrary Include="..\libs\mips\libexpr.so">
-      <Link>Jars\mips\libexpr.so</Link>
-    </EmbeddedNativeLibrary>
-    <EmbeddedNativeLibrary Include="..\libs\mips\libfiddle_tilde.so">
-      <Link>Jars\mips\libfiddle_tilde.so</Link>
-    </EmbeddedNativeLibrary>
-    <EmbeddedNativeLibrary Include="..\libs\mips\libloop_tilde.so">
-      <Link>Jars\mips\libloop_tilde.so</Link>
-    </EmbeddedNativeLibrary>
-    <EmbeddedNativeLibrary Include="..\libs\mips\liblrshift_tilde.so">
-      <Link>Jars\mips\liblrshift_tilde.so</Link>
-    </EmbeddedNativeLibrary>
-    <EmbeddedNativeLibrary Include="..\libs\mips\libpd.so">
-      <Link>Jars\mips\libpd.so</Link>
-    </EmbeddedNativeLibrary>
-    <EmbeddedNativeLibrary Include="..\libs\mips\libpdnative.so">
-      <Link>Jars\mips\libpdnative.so</Link>
-    </EmbeddedNativeLibrary>
-    <EmbeddedNativeLibrary Include="..\libs\mips\libpdnativeopensl.so">
-      <Link>Jars\mips\libpdnativeopensl.so</Link>
-    </EmbeddedNativeLibrary>
-    <EmbeddedNativeLibrary Include="..\libs\mips\libpique.so">
-      <Link>Jars\mips\libpique.so</Link>
-    </EmbeddedNativeLibrary>
-    <EmbeddedNativeLibrary Include="..\libs\mips\libsigmund_tilde.so">
-      <Link>Jars\mips\libsigmund_tilde.so</Link>
     </EmbeddedNativeLibrary>
   </ItemGroup>
   <ItemGroup>
