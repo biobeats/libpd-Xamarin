@@ -112,7 +112,7 @@ namespace PdCore.Android.IO
 
 		void avoidClickHack (Context context)
 		{
-			try {
+			/*try {
 
 				MediaPlayer mp = MediaPlayer.Create(context, Resource.Raw.silence);
 				mp.Start();
@@ -121,7 +121,7 @@ namespace PdCore.Android.IO
 				mp.Release();
 			} catch (Exception e) {
 				Console.WriteLine(TAG + " " + e.Message);
-			}
+			}*/
 
 		}
 	}

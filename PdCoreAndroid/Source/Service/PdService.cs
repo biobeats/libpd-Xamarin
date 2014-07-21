@@ -98,12 +98,12 @@ namespace PdCore.Android
 			return binder;
 		}
 
-		public bool OnUnbind(Intent intent) {
+		public override bool OnUnbind(Intent intent) {
 			release();
 			return false;
 		}
 
-		public void OnCreate() {
+		public override void OnCreate() {
 			base.OnCreate ();
 			AudioParameters.init(this);
 			if (!abstractionsInstalled) {
@@ -111,20 +111,29 @@ namespace PdCore.Android
 					string unpackDirectory = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal)+"/lib";
 
 					ZipInputStream zipIs = new ZipInputStream(Assets.Open("extra_abs.zip")); 
-					ZipEntry ze = null;
+					ZipEntry ze = zipIs.NextEntry;
+					byte[] buffer = new byte[1024];
 
-					while ((ze = zipIs.NextEntry) != null) {
+					while (ze != null) {
+						string fileName = ze.Name;
+						Java.IO.File newFile = new Java.IO.File(System.IO.Path.Combine(unpackDirectory, fileName));
 
-						FileOutputStream fout = new FileOutputStream(unpackDirectory +"/"+ ze.Name);
+						if (ze.IsDirectory) {
+							new Java.IO.File (newFile.Parent).Mkdirs ();
+						} else {
+							try {
+								FileOutputStream fos = new FileOutputStream (newFile);             
 
-						byte[] buffer = new byte[1024];
-						int length = 0;
+								int len;
+								while ((len = zipIs.Read (buffer)) > 0) {
+									fos.Write (buffer, 0, len);
+								}
 
-						while ((length = zipIs.Read(buffer))>0) {
-							fout.Write(buffer, 0, length);
+								fos.Close ();   
+							} catch (Java.IO.IOException) {
+							}
 						}
-						zipIs.CloseEntry();
-						fout.Close();
+						ze = zipIs.NextEntry;
 					}
 					zipIs.Close();
 					abstractionsInstalled = true;
@@ -136,7 +145,7 @@ namespace PdCore.Android
 			}
 		}
 
-		public void OnDestroy() {
+		public override void OnDestroy() {
 			base.OnDestroy ();
 			release();
 		}
